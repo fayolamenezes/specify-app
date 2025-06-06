@@ -309,7 +309,6 @@
   }
 }
 
-/* Tablet Styles (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     padding: 0 32px;
@@ -328,7 +327,6 @@
     font-size: 1.1rem;
   }
 
-  /* Section spacing for tablet */
   .section-one,
   .section-two {
     padding: 64px 0;
@@ -373,7 +371,6 @@
   }
 }
 
-/* Large Tablet/Small Desktop (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .container {
     padding: 0 40px;
@@ -398,14 +395,12 @@
   }
 }
 
-/* Desktop and above (1200px+) */
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
     padding: 0 24px;
   }
 
-  /* Larger screens get more breathing room */
   .section-one,
   .section-two {
     padding: 96px 0;
@@ -430,7 +425,6 @@
   }
 }
 
-/* Ultra-wide screens (1440px+) */
 @media (min-width: 1440px) {
   .container {
     max-width: 1400px;
@@ -453,7 +447,6 @@
   }
 }
 
-/* Utility classes for responsive behavior */
 .mobile-only {
   display: block;
 }
@@ -486,7 +479,6 @@
   }
 }
 
-/* Touch-friendly adjustments */
 @media (hover: none) and (pointer: coarse) {
   .btn-ghost,
   .card-btn,
@@ -508,7 +500,6 @@
   }
 }
 
-/* High DPI screens */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo-icon {
     image-rendering: -webkit-optimize-contrast;
@@ -516,7 +507,6 @@
   }
 }
 
-/* Landscape phone adjustments */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
     padding: 60px 0 40px;
@@ -532,7 +522,6 @@
   }
 }
 
-/* Accessibility: Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .logo-track,
   .carousel-track,
@@ -543,5 +532,42 @@
   * {
     transition-duration: 0.01s !important;
     animation-duration: 0.01s !important;
+  }
+}
+
+/* Hide video in text block by default */
+.text-block .mobile-video {
+  display: none;
+}
+
+/* Show mobile layout */
+@media (max-width: 768px) {
+  .section-two-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .video-content {
+    display: none; /* hide main video on mobile */
+  }
+
+  .text-content {
+    padding: 0 20px;
+  }
+
+  .text-block .mobile-video {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .heading {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
   }
 }

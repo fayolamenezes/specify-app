@@ -21,25 +21,24 @@ gsap.to(track, {
   }
 });
 
-const textBlocks = document.querySelectorAll(".text-block");
-const video = document.querySelector(".video-content video");
+if (window.innerWidth > 768) {
+  const textBlocks = document.querySelectorAll(".text-block");
+  const video = document.querySelector(".video-content video");
 
-textBlocks.forEach(block => {
-  block.addEventListener("click", () => {
-    // Change video src to clicked block's video
-    const newVideoSrc = block.getAttribute("data-video");
-    if (newVideoSrc) {
-      video.src = newVideoSrc;
-      video.play();
-    }
+  textBlocks.forEach(block => {
+    block.addEventListener("click", () => {
+      const newVideoSrc = block.getAttribute("data-video");
+      if (newVideoSrc) {
+        video.src = newVideoSrc;
+        video.play();
+      }
 
-    // Remove .purple from all headings
-    textBlocks.forEach(b => b.querySelector(".heading").classList.remove("purple"));
-
-    // Add .purple to clicked block's heading
-    block.querySelector(".heading").classList.add("purple");
+      // Highlight selected
+      textBlocks.forEach(b => b.querySelector(".heading").classList.remove("purple"));
+      block.querySelector(".heading").classList.add("purple");
+    });
   });
-});
+}
 
 const swiper = new Swiper(".mySwiper", {
   loop: true,
