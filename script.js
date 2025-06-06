@@ -143,3 +143,22 @@ gsap.utils.toArray(".info-card").forEach((card, i) => {
     }
   );
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(".section-seven-container",
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".section-seven",
+      start: "top 90%",
+      end: "top 50%",
+      toggleActions: "play none none none",
+      markers: false
+    }
+  }
+);
