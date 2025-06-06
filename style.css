@@ -170,15 +170,17 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--bg-card);
+  background:white;
   border: 1px solid var(--border-color);
   border-radius: 50px;
   padding: 8px 16px;
   margin-bottom: 32px;
   font-size: 14px;
-  color: var(--text-secondary);
+  color: black;
   cursor: pointer;
   transition: all 0.2s ease;
+  overflow: hidden;
+  font-weight: 600;
 }
 
 .hero-badge:hover {
@@ -187,11 +189,11 @@ body {
 }
 
 .hero-badge-arrow {
-  color: var(--primary);
+  color: black;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -739,7 +741,7 @@ body {
 .carousel-track {
   display: flex;
   gap: 24px;
-  animation: scrollCards 25s linear infinite;
+  animation: scrollCards 5s linear infinite;
 }
 
 .carousel-card {

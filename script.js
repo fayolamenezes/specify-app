@@ -161,3 +161,23 @@ gsap.fromTo(".section-seven-container",
     }
   }
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  const textEl = document.querySelector(".hero-badge-text");
+
+  if (textEl && window.innerWidth <= 768) {
+    const textWidth = textEl.offsetWidth;
+    const parentWidth = textEl.parentElement.offsetWidth;
+
+    gsap.fromTo(
+      textEl,
+      { x: parentWidth },            // start just outside right
+      {
+        x: -textWidth,               // move to just outside left
+        duration: 8,                 // adjust speed here (seconds)
+        ease: "linear",
+        repeat: -1,                  // infinite loop
+      }
+    );
+  }
+});
